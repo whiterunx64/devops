@@ -15,6 +15,7 @@ fi
 
 # Display the username.
 _USERNAME=`id -un`;
+
 # Test if the command succeeded.
 if [[ "${?}" -ne 0 ]]
 then
@@ -23,5 +24,13 @@ then
 fi
  
 # You can use a string test conditional.
+_USER_TO_TEST_FOR="dave";
+if [[ ${_USERNAME} == ${_USER_TO_TEST_FOR} ]] then echo "Your username matches ${_USER_TO_TEST_FOR}"; fi
 
 # Test for not equal for the string.
+
+if [[ "Apples" != "Egg" ]]
+then
+  echo "It doesn't match the object";
+  exit 1;
+fi
